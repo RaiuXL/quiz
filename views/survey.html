@@ -6,11 +6,13 @@
 </head>
 <body>
     <h2>Midterm Survey</h2>
+
     <form action="#" method="post" class="form-horizontal">
+
         <div class="form-group">
-            <label for="name" class="col-sm-4 control-label">What's your name:</label>
-            <div class="col-sm-4"><input class="form-control" type="text"
-                                         name="name" id="name" ></div>
+            <label class="col-sm-4 control-label">What's your name:</label>
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="name" id="name" ></div>
             <check if="{{ isset(@errors['name']) }}">
                 <span class="err">{{ @errors['name'] }}</span>
             </check>
@@ -20,7 +22,9 @@
             <label class="col-sm-4 control-label">Select your favorite colors:</label>
             <div class="col-sm-4">
                 <repeat group="{{ @colors }}" value="{{ @colors }}">
-                    <label><input type="checkbox" name="colors[]" value="{{ @colors }}"> {{ ucfirst(@colors) }}</label><br>
+                    <label>
+                        <input type="checkbox" name="colors[]" value="{{ @colors }}"> {{ ucfirst(@colors) }}</label>
+                    <br>
                 </repeat>
             </div>
         </div><br>
