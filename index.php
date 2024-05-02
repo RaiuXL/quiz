@@ -16,9 +16,8 @@ $F3->route('GET /', function(){
 
 // Survey Route
 $F3->route('GET|POST /survey', function($F3){
-    var_dump($F3->get('SESSION'));
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        //var_dump($_POST);
+        $name = "";
         // Get the data from the post array
         if (isset($_POST['colors']))
             $colors = implode(", ", $_POST['colors']);
@@ -40,9 +39,16 @@ $F3->route('GET|POST /survey', function($F3){
     $colors = getColors();
 
     $F3->set('colors', $colors);
+    $F3->set('name', $name);
     $view=new Template();
     echo $view->render('views/survey.html');
 });
 
+// Summary route
+$F3->route('GET|POST /summary', function($F3){
+    var_dump($F3->get('SESSION'));
+    $view=new Template();
+    echo $view->render('views/summary.html');
+});
 
 $F3->run();
