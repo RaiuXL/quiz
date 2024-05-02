@@ -1,0 +1,12 @@
+{
+  "name":"ntapiara/328/quiz",
+  "authors": [
+    {
+      "name" : "Nathan Tapia-Ramiez",
+      "email" : "tapia-ramirez.nathan@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
